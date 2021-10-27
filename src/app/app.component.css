@@ -1,0 +1,15 @@
+nav {
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav a{
+    text-decoration: none;
+}
+nav a:hover{
+    transform: scale(1.1) rotate(12deg);
+    color: darkred;
+}
