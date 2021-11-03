@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 import { WeatherComponent } from './weather/weather.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TodoComponent,
-    WeatherComponent
+    WeatherComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
