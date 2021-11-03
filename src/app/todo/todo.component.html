@@ -1,1 +1,19 @@
-<p>Liste des choses à faire</p>
+<h1>Liste des choses à faire</h1>
+
+<form #f="ngForm" (submit)="addToDo(f)">
+    <label for="title">A faire</label>
+    <input type="text" id="title" ngModel name="title">
+
+    <label for="category">Categories</label>
+    <select id="category" ngModel name="category">
+        <option value="">---</option>
+        <option value="pro">Professionel</option>
+        <option value="hobby">Loisir</option>
+        <option value="cleaningTask">Tache ménagére</option>
+    </select>
+
+    <label for="description">Description</label>
+    <textarea name="" id="description" ngModel name="description"></textarea>
+
+    <button type="submit">Ajouter</button>
+</form>
