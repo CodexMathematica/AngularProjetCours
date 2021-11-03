@@ -20,4 +20,7 @@ export class TodoService {
     return this.todos;
   }
 
+  deleteTodos(todo: Todo) {
+    this.todos = this.todos.filter(t => t.id !== todo.id);
+  }
 }

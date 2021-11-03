@@ -9,10 +9,13 @@ import { Todo } from '../models/todo';
 export class TodoInfoComponent implements OnInit {
 
   @Input() todo!: Todo;
-
+  @Output() deleteTodo = new EventEmitter<Todo>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  delete(todo: Todo){
+    this.deleteTodo.emit(todo);
+  }
 }
