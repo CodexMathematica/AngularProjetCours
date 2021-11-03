@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoInfoComponent } from './todo-info/todo-info.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     HomeComponent,
     TodoComponent,
     WeatherComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoInfoComponent
   ],
   imports: [
     BrowserModule,

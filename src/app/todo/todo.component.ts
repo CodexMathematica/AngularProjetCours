@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from '../models/todo';
 import { TodoService } from '../services/todo.service';
 
 
@@ -9,7 +10,7 @@ import { TodoService } from '../services/todo.service';
 })
 export class TodoComponent implements OnInit {
 
-  public allTodos :any[] =[];
+  public allTodos :Todo[];
 
   constructor(private todoService: TodoService) { }
 
