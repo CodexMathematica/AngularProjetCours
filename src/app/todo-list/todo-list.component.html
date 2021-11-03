@@ -1,1 +1,5 @@
-<p>todo-list works!</p>
+<h2>Liste des choses à faire</h2>
+<!-- {{allTodos | json}} pour debugger le tableau recus-->
+<ul>
+    <li *ngFor="let todo of allTodos">{{todo.title}} ({{todo.category}}) - {{todo.description}}</li>
+</ul>

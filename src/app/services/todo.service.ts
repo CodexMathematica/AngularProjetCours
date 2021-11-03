@@ -15,4 +15,8 @@ export class TodoService {
     console.log(this.todos);
   }
 
+  getTodos(){
+    return this.todos;
+  }
+
 }
