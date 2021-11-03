@@ -8,7 +8,7 @@ import { Todo } from '../models/todo';
 })
 export class TodoListComponent implements OnInit {
 
-  @Input() public allTodos: Todo[];
+  @Input() public allTodos!: Todo[];
 
   constructor() { }
 
