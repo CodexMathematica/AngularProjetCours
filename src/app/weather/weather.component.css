@@ -71,3 +71,15 @@ body {
     background-color: darkturquoise;
     filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
   }
+
+input {
+    margin-top: 20px;
+    border-radius: 7px;
+    border-color: Darkblue;
+    background-color: lightgrey;
+  }
+  
+  input:hover {
+    border-radius: 14px;
+    border-color: lightblue;
+  }

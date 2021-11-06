@@ -25,3 +25,8 @@
     <div class="row" style="font-size: 2rem;margin-top: 10px;">{{WeatherData.name}}</div>
     <div class="row" style="font-size: 1rem;">Humidité: {{WeatherData.main.humidity}}%</div>
 </div>
+
+<form (submit)="searchCity()">
+    <input type="text" name="city" placeholder="Consulter la température d'une ville" [(ngModel)]="city">
+    <input type="submit" value="rechercher">
+</form>
