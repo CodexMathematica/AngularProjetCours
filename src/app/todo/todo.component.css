@@ -1,0 +1,29 @@
+.container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+form > * {
+    margin: 3px;
+}
+
+button {
+    background: whitesmoke;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
