@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #main {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+  }
+  .row {
+    text-align: center;
+  }
+  
+  .lune {
+    margin-top: 10px;
+    filter: drop-shadow(1px 1px 10px white);
+    animation-name: Astre;
+    animation-iteration-count: infinite;
+    animation-duration: 24s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  .nuage {
+    margin-top: -38px;
+    filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
+    animation-name: Mouvement;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  .soleil {
+    filter: drop-shadow(1px 1px 10px yellow);
+    animation-name: Astre;
+    animation-iteration-count: infinite;
+    animation-duration: 28s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  @keyframes Mouvement {
+    from {
+      margin-left: -55px;
+    }
+    to {
+      margin-left: 65px;
+    }
+  }
+  
+  @keyframes Astre {
+    from {
+      margin-left: -7px;
+    }
+    to {
+      margin-left: 7px;
+    }
+  }
+  
+  .chaud {
+    background-color: darkred;
+    filter: drop-shadow(1px 1px 10px red);
+    color: antiquewhite;
+  }
+  
+  .froid {
+    background-color: darkturquoise;
+    filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
+  }
