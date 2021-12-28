@@ -8,14 +8,14 @@ import { Todo } from '../models/todo';
 })
 export class TodoInfoComponent implements OnInit {
 
-  @Input() todo!: Todo;
-  @Output() deleteTodo = new EventEmitter<Todo>();
+  @Input() todo!: Todo; // Recup les todos du parent.
+  @Output() deleteTodo = new EventEmitter<Todo>(); // Declenche un eventEmitter ecoutable par le parent
   constructor() { }
 
   ngOnInit(): void {
   }
 
   delete(todo: Todo){
-    this.deleteTodo.emit(todo);
+    this.deleteTodo.emit(todo); // Quand on clique sur le boutton on emet l'evenement
   }
 }

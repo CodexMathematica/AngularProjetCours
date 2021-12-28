@@ -1,5 +1,6 @@
 <h2>Liste des choses à faire</h2>
 <!-- {{allTodos | json}} pour debugger le tableau recus-->
 <ul>
+    <!-- [todo]="todo" passe la todo du ngFor à l'enfant. $event nom de l'event donné par angular quand on écoute un evenement -->
     <li *ngFor="let todo of allTodos"><app-todo-info [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-info></li>
 </ul>

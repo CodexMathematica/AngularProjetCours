@@ -10,7 +10,7 @@ import { TodoService } from '../services/todo.service';
 })
 export class TodoComponent implements OnInit {
 
-  public allTodos!: Todo[];
+  public allTodos!: Todo[]; // les todos sont déclarer ici et passé au enfants via la directive @input
 
   constructor(private todoService: TodoService) { }
 
@@ -18,9 +18,10 @@ export class TodoComponent implements OnInit {
   }
 
   addToDo(form : any) {
-    this.todoService.createTodo(form.value);
+    //console.log(form.value);
+    this.todoService.createTodo(form.value); // Appel la methode createTodo du service.
     form.reset(); //vide les champs du formulaire une fois le submit triggered.
-    this.allTodos = this.todoService.getTodos();
+    this.allTodos = this.todoService.getTodos(); // Rafraichie la liste afficher
   }
 
 }
