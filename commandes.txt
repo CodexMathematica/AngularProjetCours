@@ -1,0 +1,33 @@
+Ce fichier liste les commandes (n'est pas présent normalement dans un projet angular)
+Il est à améliorer et il ne reprend qu'un fraction de ce que permet le framwork angular
+
+---------------------Base-----------------------------
+
+installer nodeJs en version LTS (https://nodejs.org/en/) (ça permet d’utiliser les commandes npm)
+
+Installer le client Angular via npm
+npm install -g @angular/cli
+
+Créer un projet vierge via cli Angular (crée le composant app)
+ng new nom-app 
+
+Aller dans le dossier
+cd nom-app
+
+Lancer le serveur Angular
+ng serve ou npm start
+
+-------------------Composant---------------------------------
+
+g g c nom-composant (crée un composant nom-composant)
+ng g c nom-composant --skip-tests --dry-run (informe sur ce que la commande fait)
+ng g c nom-composant --skip-tests (crée un composant nom-composant sans les fichiers de test)
+
+----------------------Service------------------------------
+
+ng g service services/nom-service --skip-tests (crée un service nom-service) (sert a maintenir un code DRY)
+
+-------------------Que faire aprés un git clone---------------------------------
+
+Quand on envoie sur GitHub un projet angular le dossier node_modules qui contient les dépendances est ignoré.
+Les dépendances sont installées avec la commande npm install qui recherche les versions est les dépendances utiles automatiquement à partir des informations présentes dans le fichier package.json
