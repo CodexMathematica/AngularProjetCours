@@ -1,7 +1,7 @@
 <main class="container">  
     <h1>Choses à faire</h1>
 
-    <form #f="ngForm" (submit)="addToDo(f)">
+    <form #f="ngForm" (submit)="addToDo(f)"> <!-- #f permet de récuperer toute les données du formulaire (necessite d'importer le FormModule dans le fichier app.module.ts) -->
         <label for="title">A faire</label>
         <input type="text" id="title" ngModel name="title">
 
@@ -19,5 +19,6 @@
         <button type="submit">Ajouter</button>
     </form>
 
-    <app-todo-list *ngIf="allTodos" [allTodos]="allTodos"></app-todo-list>
+    <app-todo-list *ngIf="allTodos" [allTodos]="allTodos"></app-todo-list> <!-- ngIf="allTodos" si on a un élément dans le tableau allTodos du fichier .ts alors on affiche le composant -->
+<!-- [allTodos]="allTodos" on passe une variable du composant parent vers le composant enfant -->
 </main>  

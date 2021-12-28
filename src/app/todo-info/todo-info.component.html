@@ -1,4 +1,4 @@
-<h3>{{todo.title}}</h3>
+<h3>{{todo.title}}</h3> <!--Interpolation du titre-->
 <p>{{todo.category}} - {{todo.description}}</p>
 <br>
-<button (click)= "delete(todo)">Supprimer</button>
+<button (click)="delete(todo)">Supprimer</button> <!--(click)="delete(todo)" on écoute l'événement clique et si il est entendu on execute la fonction delete() du fichier ts -->

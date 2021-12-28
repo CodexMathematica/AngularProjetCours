@@ -1,7 +1,7 @@
-<div class="container">
+<main class="container">
     <h1>Météo</h1>
-    <div class="main" [ngClass]="{ 'froid': !isTemp, 'chaud': isTemp }"> 
-        <div *ngIf="WeatherData.isDay" class="row soleil">
+    <section class="main" [ngClass]="{ 'froid': !isTemp, 'chaud': isTemp }"> <!--[ngClass]="{ 'froid': !isTemp, 'chaud': isTemp } ajoute dynamiquement une classe qui sera différente selon la valeur du booléen isTemp-->
+        <div *ngIf="WeatherData.isDay" class="row soleil"> <!-- Si booléen WeatherData.isDay est vrai alors on affiche la div sinon elle ne s'affiche pas-->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="12" cy="12" r="4" />
@@ -25,10 +25,10 @@
         <div class="row" style="font-size: 1rem;">Température ressentie: {{WeatherData.temp_feels_like}}°</div>
         <div class="row" style="font-size: 2rem;margin-top: 10px;">{{WeatherData.name}}</div>
         <div class="row" style="font-size: 1rem;">Humidité: {{WeatherData.main.humidity}}%</div>
-    </div>
+    </section>
 
-    <form (submit)="searchCity()">
-        <input type="text" name="city" placeholder="Consulter la température d'une ville" [(ngModel)]="city">
+    <form (submit)="searchCity()"> <!-- permet d'appeler la méthode searchCity() quand on submit le form-->
+        <input type="text" name="city" [(ngModel)]="city"> <!-- [(ngModel)]="city" two way binding qui permet de passer la ville au ts quand on submit le form et qui permet le passage d'information dans le sens inverse (du ts au html) afin d'avoir le placeholder qui contient la ville stocker dans la variable city -->
         <input type="submit" value="rechercher">
     </form>
-</div>   
+</main>   
