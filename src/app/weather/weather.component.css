@@ -19,7 +19,7 @@
     text-align: center;
   }
   
-  .lune {
+  .moon {
     margin-top: 10px;
     filter: drop-shadow(1px 1px 10px white);
     animation-name: Astre;
@@ -29,7 +29,7 @@
     animation-direction: alternate;
   }
   
-  .nuage {
+  .cloud {
     margin-top: -38px;
     filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
     animation-name: Mouvement;
@@ -39,7 +39,7 @@
     animation-direction: alternate;
   }
   
-  .soleil {
+  .sun {
     filter: drop-shadow(1px 1px 10px yellow);
     animation-name: Astre;
     animation-iteration-count: infinite;
