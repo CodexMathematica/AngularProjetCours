@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  WeatherData: any; // variable qui récuperera les datas de l'API
+  weatherData: any; // variable qui récuperera les datas de l'API
   city: string ='london'; // Par défaut on affiche la température à londre
 
   public isTemp: boolean = false; // Booléen qui servira a changer la couleur de l'interface selon la température de la ville recherché
@@ -16,7 +16,7 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeatherData(); // permet d'appeler la méthode à chaque instanciation de la classe
-    console.log(this.WeatherData);
+    //console.log(this.weatherData);
   }
 
   getWeatherData(): void{
@@ -30,20 +30,20 @@ export class WeatherComponent implements OnInit {
 
   setWeatherData(data:any): void{
     //Affecter les données recus par l'API
-    this.WeatherData = data;
+    this.weatherData = data;
     //Heure levé soleil
-    let sunsetTime = new Date(this.WeatherData.sys.sunset *1000); //Info que l'api donne en milliseconde d'ou la multiplication par 1000
-    this.WeatherData.sunset_time = sunsetTime.toLocaleDateString(); // On ajoute une nouvelle propriété à weatherData
+    let sunsetTime = new Date(this.weatherData.sys.sunset *1000); //Info que l'api donne en milliseconde d'ou la multiplication par 1000
     //Nuit ou jours?
     let todayDate = new Date();
-    this.WeatherData.isDay = (todayDate.getTime() < sunsetTime.getTime()); //Si vrai jours sinon nuit
+    // On ajoute des nouvelles propriétés à la variable weatherData
+    this.weatherData.is_day = (todayDate.getTime() < sunsetTime.getTime()); //Si vrai jours sinon nuit
     //Gerer les temp° (calcul depuis les temp° en kelvin)
-    this.WeatherData.temp_celcius = (this.WeatherData.main.temp - 273.15).toFixed(0);
-    this.WeatherData.temp_min = (this.WeatherData.main.temp_min - 273.15).toFixed(0);
-    this.WeatherData.temp_max = (this.WeatherData.main.temp_max - 273.15).toFixed(0);
-    this.WeatherData.temp_feels_like = (this.WeatherData.main.feels_like - 273.15).toFixed(0);
+    this.weatherData.temp_celsius = (this.weatherData.main.temp - 273.15).toFixed(0);
+    this.weatherData.temp_min = (this.weatherData.main.temp_min - 273.15).toFixed(0);
+    this.weatherData.temp_max = (this.weatherData.main.temp_max - 273.15).toFixed(0);
+    this.weatherData.temp_feels_like = (this.weatherData.main.feels_like - 273.15).toFixed(0);
     // Gére le boolean qui determine la couleur de fond
-    if (this.WeatherData.temp_feels_like < 10 ){
+    if (this.weatherData.temp_feels_like < 10 ){
       this.isTemp = false; //Il fait froid donc fond bleu (géré depuis le html)
     }else{
       this.isTemp = true; // Il fait chaud donc fond rouge(géré depuis le html)
@@ -52,6 +52,6 @@ export class WeatherComponent implements OnInit {
 
   searchCity(): void { // Appeler lorsque l'on submit le form
     this.getWeatherData(); // Lancer l'appel à l'API
-    console.log(this.WeatherData);
+    //console.log(this.weatherData);
   }
 }

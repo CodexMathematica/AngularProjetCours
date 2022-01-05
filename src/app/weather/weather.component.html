@@ -1,14 +1,14 @@
 <main class="container">
     <h1>Météo</h1>
-    <section class="main" [ngClass]="{ 'froid': !isTemp, 'chaud': isTemp }"> <!--[ngClass]="{ 'froid': !isTemp, 'chaud': isTemp } ajoute dynamiquement une classe qui sera différente selon la valeur du booléen isTemp-->
-        <div *ngIf="WeatherData.isDay" class="row soleil"> <!-- Si booléen WeatherData.isDay est vrai alors on affiche la div sinon elle ne s'affiche pas-->
+    <section class="main" [ngClass]="{ 'cold': !isTemp, 'hot': isTemp }"> <!--[ngClass]="{ 'cold': !isTemp, 'hot': isTemp } ajoute dynamiquement une classe qui sera différente selon la valeur du booléen isTemp-->
+        <div *ngIf="weatherData.is_day" class="row soleil"> <!-- Si booléen weatherData.is_day est vrai alors on affiche la div sinon elle ne s'affiche pas-->
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="12" cy="12" r="4" />
                 <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
             </svg>  
         </div>   
-        <div *ngIf="!WeatherData.isDay" class="row lune">
+        <div *ngIf="!weatherData.is_day" class="row lune">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <circle cx="12" cy="12" r="9" />
@@ -20,11 +20,11 @@
                 <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12" />
             </svg>
         </div>
-        <div class="row" style="font-size: 3rem;margin-top: 5px;">{{WeatherData.temp_celcius}}°</div>
-        <div class="row" style="font-size: 1rem;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
-        <div class="row" style="font-size: 1rem;">Température ressentie: {{WeatherData.temp_feels_like}}°</div>
-        <div class="row" style="font-size: 2rem;margin-top: 10px;">{{WeatherData.name}}</div>
-        <div class="row" style="font-size: 1rem;">Humidité: {{WeatherData.main.humidity}}%</div>
+        <div class="row" style="font-size: 3rem;margin-top: 5px;">{{weatherData.temp_celsius}}°</div>  <!-- Interpolation permettant d'afficher la propriete temp_celsius contenu dans la variable weatherData-->
+        <div class="row" style="font-size: 1rem;">{{weatherData.temp_min}}° / {{weatherData.temp_max}}°</div>
+        <div class="row" style="font-size: 1rem;">Température ressentie: {{weatherData.temp_feels_like}}°</div>
+        <div class="row" style="font-size: 2rem;margin-top: 10px;">{{weatherData.name}}</div>
+        <div class="row" style="font-size: 1rem;">Humidité: {{weatherData.main.humidity}}%</div>
     </section>
 
     <form (submit)="searchCity()"> <!-- permet d'appeler la méthode searchCity() quand on submit le form-->

@@ -66,13 +66,13 @@
     }
   }
   
-  .chaud {
+  .hot {
     background-color: darkred;
     filter: drop-shadow(1px 1px 10px red);
     color: antiquewhite;
   }
   
-  .froid {
+  .cold {
     background-color: darkturquoise;
     filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
   }
